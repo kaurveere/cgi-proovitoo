@@ -21,9 +21,12 @@ const ListFilmsComponent = () => {
                 {films.map(film => (
                     <div key={film.id} className='col-sm-2 mb-3'>
                         <div className='card'>
-                            <div className='card-body' style={{ height: '150px' }}> {/* Set a fixed height */}
+                            <div className='card-body' style={{ height: '250px' }}>
                                 <h5 className='card-title'>{film.name}</h5>
                                 <p className='card-text'>Rating: {film.rating}</p>
+                                <p className='card-text'>Starting time: {film.timestmap}</p>
+                                <p className='card-text'>Genre: {film.genre}</p>
+                                <p className='card-text'>Age restriction: {film.ageRestriction}</p>
                             </div>
                         </div>
                     </div>

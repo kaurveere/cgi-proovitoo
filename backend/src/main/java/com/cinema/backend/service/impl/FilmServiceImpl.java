@@ -37,7 +37,7 @@ public class FilmServiceImpl implements FilmService {
     @Override
     public List<FilmDto> getAllFilms() {
         List<Film> films = filmRepository.findAll();
-        return films.stream().map((film) -> FilmMapper.mapToFilmDto(film))
+        return films.stream().map(FilmMapper::mapToFilmDto)
                 .collect(Collectors.toList());
     }
 

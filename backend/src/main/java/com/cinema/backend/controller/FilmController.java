@@ -35,8 +35,14 @@ public class FilmController {
 
     //Build Get All Employees REST API
     @GetMapping
-    public ResponseEntity<List<FilmDto>> getAllFilms(){
-        List<FilmDto> films = filmService.getAllFilms();
+    public ResponseEntity<List<FilmDto>> getAllFilms(@RequestParam(value = "username", required = false) String username){
+        List<FilmDto> films;
+        // Optionally filter films based on username if provided
+        if (username != null) {
+            films = filmService.getAllFilms();//TODO get all films by username
+        } else {
+            films = filmService.getAllFilms();
+        }
         return ResponseEntity.ok(films);
     }
 
